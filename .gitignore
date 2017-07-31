@@ -1,0 +1,14 @@
+config/dev.yml
+dev_releases/*
+.dev_builds
+.bundle/
+pkg/*
+vendor/cache
+.idea/
+.blobs/
+blobs
+/.final_builds/jobs/**/*.tgz
+/.final_builds/packages/**/*.tgz
+/releases/**/*.tgz
+/releases/*.tgz
+config/private.yml
