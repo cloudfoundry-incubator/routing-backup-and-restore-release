@@ -1,0 +1,21 @@
+---
+name: routing-backup
+templates:
+  backup: bin/bbr/backup
+  config.json.erb: config/config.json
+
+packages: []
+properties:
+  username:
+    description: "database user"
+  password:
+    description: "database user's password"
+  host:
+    description: "database host"
+  port:
+    description: "database port"
+  adapter:
+    description: "database adapter (mysql or postgres)"
+  database_name:
+    description: "database name"
+    default: routing-api
