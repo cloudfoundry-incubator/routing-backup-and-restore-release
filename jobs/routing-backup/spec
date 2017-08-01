@@ -2,6 +2,7 @@
 name: routing-backup
 templates:
   backup: bin/bbr/backup
+  restore: bin/bbr/restore
   config.json.erb: config/config.json
 
 packages: []

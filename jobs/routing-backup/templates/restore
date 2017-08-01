@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+set -e
+
+/var/vcap/jobs/database-backup-restorer/bin/restore \
+  --config /var/vcap/jobs/routing-backup/config/config.json \
+  --artifact-file "${BBR_ARTIFACT_DIRECTORY}/routing-db-backup"
