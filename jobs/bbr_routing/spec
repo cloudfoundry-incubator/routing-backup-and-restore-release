@@ -1,5 +1,5 @@
 ---
-name: routing-backup
+name: bbr_routing
 templates:
   backup: bin/bbr/backup
   restore: bin/bbr/restore
