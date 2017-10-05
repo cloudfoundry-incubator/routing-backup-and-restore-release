@@ -1,7 +1,16 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
+<% if p('release_level_backup') %>
+set -ex
 
-set -e
+JOB_PATH="/var/vcap/jobs/routing-backup"
+SDK_PATH="/var/vcap/jobs/database-backup-restorer"
 
-/var/vcap/jobs/database-backup-restorer/bin/backup \
-  --config /var/vcap/jobs/routing-backup/config/config.json \
-  --artifact-file "${BBR_ARTIFACT_DIRECTORY}/routing-db-backup"
+# Anything placed in the BBR_ARTIFACT_DIRECTORY by the backup script will be available to the restore script at restore time.
+# The BBR CLI is responsible for setting the BBR_ARTIFACT_DIRECTORY
+BBR_ARTIFACT_FILE_PATH="${BBR_ARTIFACT_DIRECTORY}/routing-api-db-backup"
+CONFIG_PATH="${JOB_PATH}/config/config.json"
+
+"${SDK_PATH}/bin/backup" --config "${CONFIG_PATH}" --artifact-file "${BBR_ARTIFACT_FILE_PATH}"
+<% else %>
+echo "script deactivated due to release_level_backup being set to FALSE\n"
+<% end %>
