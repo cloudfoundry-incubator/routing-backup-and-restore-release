@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo -e "PUT /lock_router_group_writes HTTP/1.0\r\n" | nc -U /var/vcap/sys/run/routing-api/admin.sock

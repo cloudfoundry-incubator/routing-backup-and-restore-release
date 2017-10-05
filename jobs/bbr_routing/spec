@@ -1,9 +1,13 @@
 ---
 name: bbr_routing
 templates:
-  backup: bin/bbr/backup
-  restore: bin/bbr/restore
+  backup.erb: bin/bbr/backup
+  restore.erb: bin/bbr/restore
   config.json.erb: config/config.json
+  pre-backup-lock: bin/bbr/pre-backup-lock
+  post-backup-unlock: bin/bbr/post-backup-unlock
+  pre-restore-lock: bin/bbr/pre-restore-lock
+  post-restore-unlock: bin/bbr/post-restore-unlock
 
 packages: []
 properties:
